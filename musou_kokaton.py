@@ -288,7 +288,7 @@ def main():
                 return 0
             if event.type == pg.KEYDOWN and event.key == pg.K_SPACE:
                 beams.add(Beam(bird))
-            if event.type == pg.KEYDOWN and event.key == pg.K_CAPSLOCK and score.value >= 50 and len(shields) == 0:# SHIFTを押してからCaps lockを押す
+            if event.type == pg.KEYDOWN and event.key == pg.K_w and score.value >= 50 and len(shields) == 0:# SHIFTを押してからCaps lockを押す
                 score.value -= 50
                 shields.add(Shield(bird, 400))
                 print(len(shields))
