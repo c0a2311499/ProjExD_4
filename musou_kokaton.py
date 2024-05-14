@@ -306,7 +306,10 @@ def main():
             if event.type == pg.KEYDOWN and event.key == pg.K_RETURN and score.value >= 200:  # エンター押したときかつスコアが200以上のとき
                 gravity.add(Gravity(400))
                 score.value -= 200  # 消費スコア
-                
+            if event.type == pg.KEYDOWN and event.key == pg.K_e:
+                if score.value > 20:
+                    EMP(emys, bombs, screen)
+                    score.value -= 20
 
         screen.blit(bg_img, [0, 0])
 
