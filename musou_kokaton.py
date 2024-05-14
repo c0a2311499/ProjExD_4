@@ -257,8 +257,6 @@ class Shield(pg.sprite.Sprite):
         deg = math.degrees(math.atan2(-vy, vx))
         self.image = pg.transform.rotozoom(self.image, deg, 1.0)
         self.image.set_colorkey((0, 0, 0))
-
-        print(vx, vy)
         self.rect = self.image.get_rect()
         self.rect.centerx = bird.rect.centerx + bird.rect.width * vx
         self.rect.centery = bird.rect.centery + bird.rect.height * vy
@@ -275,14 +273,12 @@ def main():
     screen = pg.display.set_mode((WIDTH, HEIGHT))
     bg_img = pg.image.load(f"fig/pg_bg.jpg")
     score = Score()
-    score.value=999999
     bird = Bird(3, (900, 400))
     bombs = pg.sprite.Group()
     beams = pg.sprite.Group()
     exps = pg.sprite.Group()
     emys = pg.sprite.Group()
     shields = pg.sprite.Group()
-    print(len(shields))
     tmr = 0
     clock = pg.time.Clock()
     while True:
