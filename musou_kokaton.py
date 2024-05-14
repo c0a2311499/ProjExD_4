@@ -250,7 +250,7 @@ class EMP(pg.sprite.Sprite):
             emy.image.set_colorkey((0, 0, 0))
         
         for bomb in Bomb:
-            bomb.speed /= 2 
+            bomb.speed /= 2  
         
         
         
