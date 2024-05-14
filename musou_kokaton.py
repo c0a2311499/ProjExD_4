@@ -264,6 +264,15 @@ class Gravity(pg.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH/2, HEIGHT/2) 
         self.life = life  # 発動時間
+class EMP(pg.sprite.Sprite):
+    def __init__(self, Enemy, Bomb, Surface): #敵機、爆弾、surfaceを与えている
+        for emy in Enemy:
+            emy.interval = math.inf
+            emy.image = pg.transform.laplacian(emy.image)
+            emy.image.set_colorkey((0, 0, 0))
+        
+        for bomb in Bomb:
+            bomb.speed /= 2  
 
     def update(self):
         self.life -= 1
